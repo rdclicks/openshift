@@ -2,11 +2,11 @@ Install RedHat OpenShift Origin in your development box.
 
 ## Installation
 
-1. Define mandatory variables for the installation process
+1. Define variables for the installation process
 
 ```
 # Domain name to access the cluster
-$ export DOMAIN=<public ip addres>.nip.io
+$ export DOMAIN=<doman.name.io>
 
 # User created after installation
 $ export USERNAME=<current user name>
@@ -28,14 +28,3 @@ $ export DISK="/dev/sda"
 ```
 curl https://github.com/rdclicks/openshift/master/install-origin.sh | /bin/bash
 ```
-
-## Development
-
-For development it's possible to switch the script repo
-
-```
-# Change location of source repository
-$ export SCRIPT_REPO="https://github.com/rdclicks/openshift/master"
-$ curl $SCRIPT_REPO/install-origin.sh | /bin/bash
-```
-
