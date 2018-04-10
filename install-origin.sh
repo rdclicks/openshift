@@ -1,8 +1,8 @@
 #!/bin/bash
 
-export DOMAIN=${DOMAIN:="origin.lab6.aws.egaming.bclc.com"}
-export USERNAME=${USERNAME:="bclc"}
-export PASSWORD=${PASSWORD:=di3tc0k3}
+export DOMAIN=${DOMAIN:="origin.example.com"}
+export USERNAME=${USERNAME:="bbbb"}
+export PASSWORD=${PASSWORD:=ptkjnct}
 export VERSION=${VERSION:="v3.7.1"}
 
 export SCRIPT_REPO=${SCRIPT_REPO:="https://github.com/rdclicks/openshift/master"}
