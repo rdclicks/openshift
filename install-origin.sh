@@ -1,8 +1,8 @@
 #!/bin/bash
 
-export DOMAIN=${DOMAIN:="$(curl ipinfo.io/ip).nip.io"}
-export USERNAME=${USERNAME:="$(whoami)"}
-export PASSWORD=${PASSWORD:=password}
+export DOMAIN=${DOMAIN:="origin.lab6.aws.egaming.bclc.com"}
+export USERNAME=${USERNAME:="bclc"}
+export PASSWORD=${PASSWORD:=di3tc0k3}
 export VERSION=${VERSION:="v3.7.1"}
 
 export SCRIPT_REPO=${SCRIPT_REPO:="https://github.com/rdclicks/openshift/master"}
@@ -38,7 +38,7 @@ cd openshift-ansible && git fetch && git checkout release-3.7 && cd ..
 
 
 cat <<EOD > /etc/hosts
-127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4 $(hostname)
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 ${IP}           $(hostname) console console.${DOMAIN}
 EOD
@@ -85,8 +85,8 @@ if [ "$memory" -lt "8388608" ]; then
 fi
 
 
-curl -o localconfig.download $SCRIPT_REPO/localconfig.ini
-envsubst < config.download > config.ini
+#curl -o localconfig.download $SCRIPT_REPO/localconfig.ini
+#envsubst < config.download > config.ini
 ansible-playbook -i localconfig.ini openshift-ansible/playbooks/byo/config.yml
 
 htpasswd -b /etc/origin/master/htpasswd ${USERNAME} ${PASSWORD}
